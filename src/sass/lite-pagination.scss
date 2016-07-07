@@ -1,0 +1,182 @@
+
+$base_color: #ffffff;
+$mask_color: #aaa;
+$global_radius:5px;
+$header_height: 30px;
+$content_width: 500px;
+$content_min_height: 300px;
+
+
+.lite-dialog{
+
+  font-family: 'Microsoft Yahei';
+  // fixup chrome
+  input,textarea,button,label{
+    outline: none;
+  }
+
+  z-index: 50;
+
+  .btn{
+    background-color: #4cae4c;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    -webkit-border-radius: $global_radius;
+    -moz-border-radius: $global_radius;
+    border-radius: $global_radius;
+  }
+  .btn:active{
+    background-color: #999;
+  }
+
+  display: block;
+  .mask{
+    z-index: 51;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: $mask_color;
+    opacity: 0.5;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    // fix ie8 opacity
+    background-color: transparent\9;
+    background-image:url("../imgs/transparent.png")\9;
+  }
+
+  .content-box{
+    z-index: 55;
+    .title{
+      //cursor: move;
+      position: relative;
+      h4{
+        height: $header_height;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        //fix up ie6,7
+        *line-height: 200%;
+
+        border-bottom: 1px solid #e4e4e4;
+        .title-text{
+          vertical-align: middle;
+          color: #666;
+        }
+        .icon-set{
+          display: inline-block;
+          position: absolute;
+          right: 1px;
+
+          .icon{
+            border: none;
+            outline: none;
+            color: red;
+            font-size: $header_height - 10px;
+            background-color: transparent;
+            display: inline-block;
+            position: absolute;
+            /* fix up ie6,7.. inline-block invalid*/
+            *float: left;
+            vertical-align: middle;
+            line-height: $header_height - 10px;
+            vertical-align: middle;
+            top: (10px / 2);
+            right: (10px/2);
+            -webkit-border-radius: $header_height - 10px;
+            -moz-border-radius: $header_height - 10px;
+            border-radius: $header_height - 10px;
+            cursor: pointer;
+            font-weight: bold;
+
+          }
+          .icon:active{
+            color: #faa;
+          }
+
+          .close{
+            @extend .icon;
+            & span:before{
+              // fix up fontawesome , resolved by font-awesome
+              //content: 'x'\9;
+            }
+          }
+          .mini{
+            @extend .icon;
+            right: 30px;
+            color: #0086b3;
+          }
+          .mini:active{
+            color: lighten(#0086b3, 15%);
+          }
+
+        }
+      }
+    }
+
+    background-color: #ffffff;
+    width: $content_width;
+    min-height: $content_min_height;
+    /*fix up ie 7,6,*/
+    height: ($content_min_height)\9;
+
+
+
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    padding: 0px;
+    border-radius: $global_radius;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid white;
+    border: 1px solid #e4e4e4\9;
+    position: absolute;
+    box-shadow: 2px 2px 10px #aaa;
+
+    .content{
+      height: 100%;
+      .main{
+        height: $content_min_height;
+        overflow: auto;
+        margin-bottom: 50px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .footer{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        border-top: 1px solid #e4e4e4;
+        .btn-group{
+          float: right;
+          margin-right: 15px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          button{
+            @extend .btn;
+            margin-right: 5px;
+          }
+          .cancel{
+            background-color: #aaa;
+          }
+        }
+      }
+    }
+    &.click-mask{
+      -webkit-animation: scaleOut 0.2s 1 linear;
+      -o-animation: scaleOut 0.2s 1 linear;
+      -ms-animation: scaleOut 0.2s 1 linear;
+      -moz-animation: scaleOut 0.2s 1 linear;
+      animation: scaleOut 0.2s 1 linear;
+    }
+  }
+
+}
