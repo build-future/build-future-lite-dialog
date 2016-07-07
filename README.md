@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![SimpleTemplate@BuildFuture](https://github.com/samuelzuuka/buildfuture-simple-template.git)]
 =========================================================================================================================================================
 
@@ -46,3 +47,7 @@
 
 
 `@BuildFuture` aims to make it better,more effective, easier to build projects.
+=======
+# build-future-lite-dialog
+A lite version dialog based on jquery 
+>>>>>>> 6796143980027330caa8e0f65791b23b208a6222
