@@ -41,6 +41,9 @@ module.exports = function (grunt) {
         dataName:'data',
         data:'<%= dataName%>/',
         bower_base:'bower_components',
+        distName:'dist',
+        dist:'<%= distName%>/',
+
         // copy from src dir to dest dir
         copy:{
             // copy files needn't to be modified :: font , html,
@@ -56,7 +59,6 @@ module.exports = function (grunt) {
                                     !filepath.startsWith('src/lib') &&
                                     !filepath.startsWith('src/js') &&
                                     !filepath.startsWith('src/html') &&
-                                    //!filepath.startsWith('src/imgs') &&
                                     !filepath.endsWith('.html');
                         }
                     },

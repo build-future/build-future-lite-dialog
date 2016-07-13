@@ -379,4 +379,3 @@
 
 }(window,jQuery,_));
 
-var dialog = LiteDialog.confirmDialog();

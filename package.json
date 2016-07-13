@@ -1,7 +1,7 @@
 {
-  "name": "build-future-lite-pagination",
+  "name": "build-future-lite-dialog",
   "version": "1.0.2",
-  "description": "A pluginable pagination, which enables to self define style && page item generator! -- @BuildFuture ",
+  "description": "A Lite Dialog which is so easy to extend your own style! -- @BuildFuture ",
   "main": "server.js",
   "scripts": {
     "test": "node server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samuelzuuka/buildfuture-simple-template.git"
+    "url": "https://github.com/samuelzuuka/build-future-lite-dialog.git"
   },
   "keywords": [
     "@BuildFuture",
@@ -43,8 +43,6 @@
     "imagemin-mozjpeg": "5.1.0",
     "imagemin-pngquant": "^5.0.0",
     "maxmin": "^2.1.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
     "xml-char-classes": "^1.0.0"
   }
 }

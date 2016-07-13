@@ -24,6 +24,5 @@
     "tests"
   ],
   "dependencies": {
-    "modernizer": "^2.8.2"
   }
 }
